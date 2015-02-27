@@ -9,6 +9,18 @@ class CardsetsController < ApplicationController
     render json: Cardset.all
   end
 
+  def destroy
+    card = Cardset.find_by(id: params[:id])
+    card.destroy
+    render json: Cardset.all
+  end
+
+  def update
+    card = Cardset.find_by(id: params[:id])
+    card.update(cardset_params)
+    render json: Cardset.all
+  end
+
   private
 
   def cardset_params

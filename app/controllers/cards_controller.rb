@@ -1,11 +1,15 @@
 class CardsController < ApplicationController
 
   def create
-
     Card.create(card_params)
     render json: Cardset.all
   end
 
+  def destroy
+    card = Card.find_by(id: params[:id])
+    card.destroy
+    render json: Cardset.all
+  end
 
   private
 
