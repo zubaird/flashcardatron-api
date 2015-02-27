@@ -21,9 +21,33 @@ Cardset.create(
   title: "Spanish"
 )
 
+Cardset.create(
+  title: "gSchool"
+)
+
 Cardset.first.cards.create(
   question: "What is 1 + 1" ,
   answer: "2",
+)
+
+Cardset.find_by(title:"gSchool").cards.create(
+question: "What is Ember?",
+answer: "Some JavaScript Framework"
+)
+
+Cardset.find_by(title:"gSchool").cards.create(
+question: "What is MVC?",
+answer: "Model View Controller"
+)
+
+Cardset.find_by(title:"gSchool").cards.create(
+question: "This is a question",
+answer: "This is an answer"
+)
+
+Cardset.find_by(title:"gSchool").cards.create(
+question: "This is a question",
+answer: "This is an answer"
 )
 
 Cardset.find_by(title:"Science").cards.create(
@@ -31,6 +55,10 @@ question: "What is a black hole",
 answer: "it is under investigation"
 )
 
+Cardset.find_by(title:"Science").cards.create(
+question: "This is a question",
+answer: "This is an answer"
+)
 
 Cardset.find_by(title:"Spanish").cards.create(
 question: "What is cheese in Spanish?",

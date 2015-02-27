@@ -11,6 +11,12 @@ class CardsController < ApplicationController
     render json: Cardset.all
   end
 
+  def update
+    card = Card.find_by(id: params[:id])
+    card.update(card_params)
+    render json: Cardset.all
+  end
+
   private
 
   def card_params
